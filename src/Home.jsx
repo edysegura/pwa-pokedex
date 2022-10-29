@@ -4,16 +4,19 @@ import NumberSort from './icons/NumberSort'
 import PokeballIcon from './icons/PokeballIcon'
 
 class Home extends Nullstack {
-  pokelist = [
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png',
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png',
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
-  ]
+  pokelist = []
 
-  prepare({ project, page }) {
+  launch({ project, page }) {
     page.title = `${project.name}`
     page.description = `${project.name} was made with Nullstack`
+  }
+
+  prepare() {
+    for (let i = 1; i < 152; i++) {
+      this.pokelist.push(
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i}.png`,
+      )
+    }
   }
 
   renderHeader() {
@@ -42,7 +45,7 @@ class Home extends Nullstack {
 
   renderPokeList() {
     return (
-      <div class="flex flex-wrap gap-3">
+      <div class="flex flex-wrap gap-2">
         {this.pokelist.map((pokeData) => (
           <PokeCard pokeData={pokeData} />
         ))}
