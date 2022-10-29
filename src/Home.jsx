@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack'
+import Tag from './components/Tag'
 
 class Home extends Nullstack {
   prepare({ project, page }) {
@@ -15,9 +16,10 @@ class Home extends Nullstack {
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
           alt=""
         />
-        <span class="rounded-xl bg-rock py-1 px-2 text-xs font-bold text-white">
-          Rock
-        </span>
+        <Tag>Default</Tag>
+        <Tag class="bg-rock">Rock</Tag>
+        <Tag class="bg-normal">Normal</Tag>
+        <Tag class="bg-fighting">Fighting</Tag>
       </section>
     )
   }
