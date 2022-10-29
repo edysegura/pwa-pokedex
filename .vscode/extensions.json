@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "christianmortaro.vscode-nullstack",
+    "bradlc.vscode-tailwindcss",
+    "xabikos.javascriptsnippets",
+    "esbenp.prettier-vscode"
+  ]
+}
