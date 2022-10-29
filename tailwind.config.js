@@ -7,9 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      darkgray: '#212121',
+    },
     fontFamily: {
-      roboto: ['Roboto', 'sans-serif'],
-      'crete-round': ['Crete Round', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
     },
   },
   plugins: [],
