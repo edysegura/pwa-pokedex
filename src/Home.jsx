@@ -9,7 +9,7 @@ class Home extends Nullstack {
   render() {
     return (
       <section class="my-0 mx-auto flex min-h-screen w-full max-w-3xl flex-wrap items-center p-6 md:flex-nowrap">
-        <h1>Pokédex</h1>
+        <h1>PWA Pokédex</h1>
         <img
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
           alt=""
