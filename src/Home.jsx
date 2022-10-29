@@ -11,12 +11,30 @@ class Home extends Nullstack {
     page.description = `${project.name} was made with Nullstack`
   }
 
-  prepare() {
-    for (let i = 1; i < 152; i++) {
-      this.pokeList.push(
-        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i}.png`,
-      )
+  async fetchPokeData({ pokeNumber }) {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`,
+    )
+    const data = await response.json()
+    return {
+      number: data.id,
+      name: data.name,
+      type: data.types[0].type.name,
+      sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeNumber}.png`,
     }
+  }
+
+  async loadPokeData() {
+    const promises = []
+    for (let i = 1; i < 152; i++) {
+      promises.push(this.fetchPokeData({ pokeNumber: i }))
+    }
+    const pokeList = await Promise.all(promises)
+    this.pokeList = pokeList
+  }
+
+  async hydrate() {
+    this.loadPokeData()
   }
 
   renderHeader() {
