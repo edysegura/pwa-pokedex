@@ -25,7 +25,7 @@ class Application extends Nullstack {
     return (
       <body class="bg-white font-poppins text-darkgray">
         <Head />
-        <Home route="/" />
+        <Home route="/" persistent />
       </body>
     )
   }
