@@ -21,10 +21,23 @@ class Home extends Nullstack {
     )
   }
 
+  renderSearchBar() {
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="Search pokemon"
+          class="w-full rounded-lg border border-gray-300 p-2"
+        />
+      </div>
+    )
+  }
+
   render() {
     return (
-      <section class="mx-auto min-h-screen w-full max-w-3xl px-4 py-5">
+      <section class="mx-auto flex min-h-screen w-full max-w-3xl flex-col gap-3 px-4 py-5">
         <Header />
+        <SearchBar />
       </section>
     )
   }
