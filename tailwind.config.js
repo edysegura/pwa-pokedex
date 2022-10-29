@@ -6,9 +6,11 @@ module.exports = {
     './src/**/*.tsx',
   ],
   theme: {
-    extend: {},
-    colors: {
-      darkgray: '#212121',
+    extend: {
+      colors: {
+        darkgray: '#212121',
+        rock: '#B69E31',
+      },
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
