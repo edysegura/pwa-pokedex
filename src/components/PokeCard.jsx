@@ -1,16 +1,16 @@
-import { twMerge } from 'tailwind-merge'
+import { colors } from '../constants/color'
 
 export default function PokeCard({ pokeData }) {
-  console.log(pokeData)
   const { number, name, type, sprite } = pokeData
   return (
     <figure
-      class={twMerge(
-        'flex h-36 w-28 flex-col overflow-hidden rounded-lg border border-gray-700',
-        `border-${type}`,
-      )}
+      class="border-water flex h-36 w-28 flex-col overflow-hidden rounded-lg border"
+      style={`border-color: ${colors[type]}`}
     >
-      <span class="w-full p-2 text-right text-xs">
+      <span
+        class="w-full p-2 text-right text-xs"
+        style={`color: ${colors[type]}`}
+      >
         #{String(number).padStart(3, '0')}
       </span>
       <img
@@ -20,10 +20,8 @@ export default function PokeCard({ pokeData }) {
         loading="lazy"
       />
       <figcaption
-        class={twMerge(
-          'mt-auto bg-gray-300 p-1 text-center capitalize text-white',
-          // `bg-${type}`,
-        )}
+        class="mt-auto w-full p-1 text-center text-sm capitalize text-white"
+        style={`background-color: ${colors[type]}`}
       >
         {name}
       </figcaption>

@@ -73,7 +73,7 @@ class Home extends Nullstack {
 
   render() {
     return (
-      <section class="mx-auto flex min-h-screen w-full max-w-3xl flex-col gap-3 px-4 py-5">
+      <section class="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-3 px-4 py-5">
         <Header />
         <SearchBar />
         <PokeList />
