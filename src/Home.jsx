@@ -63,7 +63,7 @@ class Home extends Nullstack {
 
   renderPokeList() {
     return (
-      <div class="flex flex-wrap justify-between gap-3">
+      <div class="flex flex-wrap justify-between gap-2">
         {this.pokeList.map((pokeData) => (
           <PokeCard pokeData={pokeData} />
         ))}
